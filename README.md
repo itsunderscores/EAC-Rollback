@@ -30,9 +30,11 @@ This repository packages the public research demo (`eac_poc.py`), two example dr
 
 ## Demonstration
 
-Screen recording showing **2022** and legacy **2017** drivers accepted, written to disk, and loaded.![Uploading eac_poc_preview.gif…]()
+Screen recording showing **2022** and legacy **2017** drivers accepted, written to disk, and loaded.
 
-<video src="https://github.com/user-attachments/assets/7ae69537-8003-4a33-b725-c8f273d5aa57" controls playsinline width="100%"/>
+<p align="center">
+  <video src="https://github.com/user-attachments/assets/7ae69537-8003-4a33-b725-c8f273d5aa57" controls playsinline width="100%"></video>
+</p>
 
 ---
 
@@ -240,10 +242,6 @@ To recover: stop EAC / close games, restore from backup, or **repair/reinstall**
 **SDDL (as documented in the PoC):**
 
 ```text
-
-https://github.com/user-attachments/assets/78a931e2-c75f-45e6-a8eb-3388b9b4ef53
-
-
 D:(A;OICI;GA;;;BG)(A;OICI;GA;;;AN)(A;OICI;GRGWGX;;;AU)(A;OICI;GA;;;BA)
 ```
 
