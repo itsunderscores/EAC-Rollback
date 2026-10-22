@@ -33,14 +33,20 @@ This repository packages the public research demo (`eac_poc.py`), two example dr
 Screen recording showing **2022** and legacy **2017** drivers accepted, written to disk, and loaded.
 
 <p align="center">
-  <video src="eac_poc.mp4" controls width="100%">
-    <a href="eac_poc.mp4">Download eac_poc.mp4</a>
+  <video controls playsinline width="100%">
+    <source src="https://raw.githubusercontent.com/itsunderscores/EAC-Rollback/main/eac_poc.mp4" type="video/mp4">
   </video>
 </p>
 
-If the player does not appear on GitHub, open the file directly: **[eac_poc.mp4](./eac_poc.mp4)** (the file page includes a built-in player).
+<p align="center">
+  <a href="https://github.com/itsunderscores/EAC-Rollback/blob/main/eac_poc.mp4">
+    <img src="eac_poc_preview.gif" alt="Demonstration preview — click if the player above does not load" width="100%">
+  </a>
+</p>
 
-**Optional (often best embed):** On github.com, edit this README in the browser, drag `eac_poc.mp4` into the editor, and replace the `<video>` block above with the `https://github.com/.../assets/...` URL GitHub inserts—that CDN link always renders inline.
+<p align="center">
+  <strong><a href="https://github.com/itsunderscores/EAC-Rollback/blob/main/eac_poc.mp4">▶ Open full recording on GitHub</a></strong>
+</p>
 
 ---
 
@@ -120,7 +126,8 @@ What happens **after** rollback is not fully mapped: how legacy drivers **initia
 .
 ├── README.md
 ├── eac_poc.py                 # Python 3 demo (-scan / -rollback)
-├── eac_poc.mp4                # Demonstration video
+├── eac_poc.mp4                # Full demonstration video
+├── eac_poc_preview.gif        # Inline README preview (auto-generated)
 └── drivers/
     ├── EAC_EOS_2017.sys       # Legacy ~2017 signed build
     └── EAC_EOS_2022.sys       # ~2022 signed build
@@ -143,7 +150,7 @@ Use an **isolated lab VM** or sacrificial install—not a daily-driver account.
 ## Quick start
 
 ```powershell
-git clone https://github.com/YOUR_USER/YOUR_REPO.git
+git clone https://github.com/itsunderscores/EAC-Rollback.git
 cd YOUR_REPO
 
 # Inspect access + in-flight driver while a game is running
