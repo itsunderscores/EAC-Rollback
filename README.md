@@ -33,19 +33,13 @@ This repository packages the public research demo (`eac_poc.py`), two example dr
 Screen recording showing **2022** and legacy **2017** drivers accepted, written to disk, and loaded.
 
 <p align="center">
-  <video controls playsinline width="100%">
-    <source src="https://raw.githubusercontent.com/itsunderscores/EAC-Rollback/main/eac_poc.mp4" type="video/mp4">
-  </video>
+  <video src="https://github.com/user-attachments/assets/00000000-0000-0000-0000-000000000000" controls playsinline width="100%" />
 </p>
 
 <p align="center">
   <a href="https://github.com/itsunderscores/EAC-Rollback/blob/main/eac_poc.mp4">
-    <img src="eac_poc_preview.gif" alt="Demonstration preview — click if the player above does not load" width="100%">
+    <img src="eac_poc_preview.gif" alt="Preview — replace video src above, or click for eac_poc.mp4" width="100%">
   </a>
-</p>
-
-<p align="center">
-  <strong><a href="https://github.com/itsunderscores/EAC-Rollback/blob/main/eac_poc.mp4">▶ Open full recording on GitHub</a></strong>
 </p>
 
 ---
@@ -151,7 +145,7 @@ Use an **isolated lab VM** or sacrificial install—not a daily-driver account.
 
 ```powershell
 git clone https://github.com/itsunderscores/EAC-Rollback.git
-cd YOUR_REPO
+cd EAC-Rollback
 
 # Inspect access + in-flight driver while a game is running
 python eac_poc.py -scan
@@ -254,6 +248,10 @@ To recover: stop EAC / close games, restore from backup, or **repair/reinstall**
 **SDDL (as documented in the PoC):**
 
 ```text
+
+https://github.com/user-attachments/assets/78a931e2-c75f-45e6-a8eb-3388b9b4ef53
+
+
 D:(A;OICI;GA;;;BG)(A;OICI;GA;;;AN)(A;OICI;GRGWGX;;;AU)(A;OICI;GA;;;BA)
 ```
 
