@@ -41,13 +41,13 @@ While reversing EAC’s **driver initialization path**, the issue is not “bypa
 
 | What happens | Detail |
 |--------------|--------|
-| **IPC** | Driver bytes reach `EasyAntiCheat_EOSSys` through a **global shared memory** object that a **normal user can map for read/write**. |
+| **IPC** | Driver bytes for **`EasyAntiCheat_EOS.sys`** are placed in **`Global\EasyAntiCheat_EOSBin`** (shared memory); the **`EasyAntiCheat_EOSSys`** Windows service reads that buffer—a **normal user can map the section for read/write**. |
 | **No caller authentication** | The SYSTEM service **does not authenticate** which process produced the buffer—it **consumes** what appears in the section after synchronization events. |
 | **Wire format** | Bytes are obscured with a **custom, reversible** transform (not encryption with integrity). Anyone who knows the algorithm can **encode** a substitute image. |
 | **Policy gap** | The service checks **signature and publisher** (EasyAntiCheat / Epic) but does **not** enforce an **expected or minimum driver version**. |
 | **Outcome** | An **older signed** `.sys` can be **substituted**, **written** to `Program Files (x86)\EasyAntiCheat_EOS\`, and **loaded** in ring 0—**signed-driver rollback** using EAC’s trusted loader. |
 
-**Demo scope:** The bundled **2017** and **2022** builds illustrate downgrade; success is visible via on-disk hash match and a running `EasyAntiCheat_EOSSys` after handoff.
+**Demo scope:** The bundled **2017** and **2022** **`EasyAntiCheat_EOS.sys`** builds illustrate downgrade; success is visible via on-disk hash match and the **`EasyAntiCheat_EOSSys`** service running after handoff.
 
 ---
 
@@ -215,8 +215,8 @@ To recover: stop EAC / close games, restore from backup, or **repair/reinstall**
 |------|--------|
 | Shared section | `Global\EasyAntiCheat_EOSBin` |
 | Events | `Global\EasyAntiCheat_EOSEventModule`, `Global\EasyAntiCheat_EOSEventDriver`, `Global\EasyAntiCheat_EOSEventGame` |
-| Service | `EasyAntiCheat_EOSSys` |
-| On-disk driver | `C:\Program Files (x86)\EasyAntiCheat_EOS\EasyAntiCheat_EOS.sys` |
+| Windows service (loader) | `EasyAntiCheat_EOSSys` — not the same as the `.sys` file |
+| Kernel driver file on disk | `C:\Program Files (x86)\EasyAntiCheat_EOS\EasyAntiCheat_EOS.sys` |
 | Header size | 28 bytes (LE fields: version, sizes, flags, PID, **status @20**, **length @24**) |
 | Payload | Encoded driver bytes @ offset **28** |
 | Status | `0` = pending, `1` = completed (PoC success heuristic) |
