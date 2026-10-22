@@ -30,17 +30,9 @@ This repository packages the public research demo (`eac_poc.py`), two example dr
 
 ## Demonstration
 
-Screen recording showing **2022** and legacy **2017** drivers accepted, written to disk, and loaded.
+Screen recording showing **2022** and legacy **2017** drivers accepted, written to disk, and loaded.![Uploading eac_poc_preview.gif…]()
 
-<p align="center">
-  <video src="https://github.com/user-attachments/assets/00000000-0000-0000-0000-000000000000" controls playsinline width="100%" />
-</p>
-
-<p align="center">
-  <a href="https://github.com/itsunderscores/EAC-Rollback/blob/main/eac_poc.mp4">
-    <img src="eac_poc_preview.gif" alt="Preview — replace video src above, or click for eac_poc.mp4" width="100%">
-  </a>
-</p>
+<video src="https://github.com/user-attachments/assets/7ae69537-8003-4a33-b725-c8f273d5aa57" controls playsinline width="100%"/>
 
 ---
 
