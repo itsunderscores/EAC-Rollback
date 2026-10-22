@@ -2,8 +2,6 @@
 
 A **logic flaw** in EasyAntiCheat EOS allows a **standard (non-admin) user** to choose which **older, legitimately signed** `EasyAntiCheat_EOS.sys` the **SYSTEM**-level EAC service installs and loads into the kernel. The vendor’s own service becomes the loader: it writes to the protected path under Program Files and starts the driver—without the user holding administrator privileges.
 
-This repository packages the public research demo (`eac_poc.py`), two example driver builds (**2017** legacy and **2022**), and a screen recording. **Discovery, analysis, and the original PoC are by [azizwho](https://twitter.com/azizwho)**; this repo is a documented mirror for reproducibility and discussion.
-
 > **Disclosure:** Reported to the vendor roughly **one year** before public release, **rejected**, and **still reproducible** at the time of publication.
 
 ---
@@ -16,7 +14,6 @@ This repository packages the public research demo (`eac_poc.py`), two example dr
 - [How the attack works](#how-the-attack-works)
 - [Impact](#impact)
 - [Open research](#open-research)
-- [Repository layout](#repository-layout)
 - [Requirements](#requirements)
 - [Quick start](#quick-start)
 - [Usage examples](#usage-examples)
@@ -105,21 +102,6 @@ sequenceDiagram
 ## Open research
 
 What happens **after** rollback is not fully mapped: how legacy drivers **initialize** against the **current** user-mode and service stack, which **IOCTL / callbacks** remain reachable, and whether any **cross-version** assumptions create additional bugs. That line of work is intentionally left for follow-on research.
-
----
-
-## Repository layout
-
-```text
-.
-├── README.md
-├── eac_poc.py                 # Python 3 demo (-scan / -rollback)
-├── eac_poc.mp4                # Full demonstration video
-├── eac_poc_preview.gif        # Inline README preview (auto-generated)
-└── drivers/
-    ├── EAC_EOS_2017.sys       # Legacy ~2017 signed build
-    └── EAC_EOS_2022.sys       # ~2022 signed build
-```
 
 ---
 
@@ -259,7 +241,4 @@ Redistributing signed driver binaries may have **license and legal** implication
 
 ## Credits
 
-- **Original finding, research, and PoC:** **[azizwho](https://twitter.com/azizwho)** on Twitter/X. All credit for the vulnerability analysis and tool authorship belongs to him.
-- **This repository:** Hosts the script, example drivers, demo video, and documentation for reproducibility; it is **not** a claim of independent discovery.
-
-If you publish a fork or mirror, **keep attribution to azizwho** and link to his original disclosure.
+Finding, research, and original PoC: **[azizwho](https://twitter.com/azizwho)** on Twitter/X.
